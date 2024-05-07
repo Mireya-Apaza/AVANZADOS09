@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mi-app-angular';
+  mensaje: string = 'Este es un componente de saludo creado en Angular.';
 }

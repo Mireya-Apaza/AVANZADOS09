@@ -1,0 +1,19 @@
+<div class="p-5 pt-5 pt-0">
+  <h2>Razas de gatos 😺</h2>
+  <button class="btn mt-2" style="background-color: #98c6e7; color:white" (click)="listar()">Lista de imágenes</button>
+  <div *ngIf="mostrarImagenes">
+    <div class="row">
+      <div class="col-md-4 mt-3" *ngFor="let imagen of imagenes">
+        <div class="card">
+          <img [src]="imagen.url" [alt]="imagen.titulo" class="card-img-top" width="300" height="300">
+          <div class="card-body">
+            <h3 class="card-title">{{ imagen.titulo }}</h3>
+            <p class="card-text">{{ imagen.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-secondary mt-3" (click)="ocultarImagenes()">Ocultar imágenes</button>
+  </div>
+  <p *ngIf="!mostrarImagenes && imagenes.length === 0" class="text-center">No hay imágenes para mostrar</p>
+</div>
